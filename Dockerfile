@@ -7,7 +7,7 @@ RUN apk --update add ca-certificates
 ###################
 # Build stage     #
 ###################
-FROM golang:1.14 as builder
+FROM golang:1.15 as builder
 
 # Get the GitHub workflow run ID and commit hash passed by GitHub actions
 ARG GITHUB_SHA
