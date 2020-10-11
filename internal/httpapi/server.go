@@ -79,6 +79,8 @@ func (s *Service) respond(w http.ResponseWriter, _ *http.Request, data interface
 	}
 
 	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(status)
+
 	err := json.NewEncoder(w).Encode(data)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
